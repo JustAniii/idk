@@ -1,0 +1,190 @@
+# variablen
+kl: float = 0
+x: float = 0
+y: float = 0
+x05 = 0
+y05 = 0
+pins = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+end = 0
+end1 = 0
+
+
+def calc(x: float, kl: float, pins: list, start: int):
+    pins_new = None
+    pins_new = pins
+    if x <= kl / 16 * 1:
+        pins_new[start] = pins_new[start] + 1
+    elif x <= kl / 16 * 2:
+        pins_new[start + 1] = pins_new[start + 1] + 1
+    elif x <= kl / 16 * 3:
+        pins_new[start + 2] = pins_new[start + 2] + 1
+    elif x <= kl / 16 * 4:
+        pins_new[start + 3] = pins_new[start + 3] + 1
+    elif x <= kl / 16 * 5:
+        pins_new[start + 4] = pins_new[start + 4] + 1
+    elif x <= kl / 16 * 6:
+        pins_new[start + 5] = pins_new[start + 5] + 1
+    elif x <= kl / 16 * 7:
+        pins_new[start + 6] = pins_new[start + 6] + 1
+    elif x <= kl / 16 * 8:
+        pins_new[start + 7] = pins_new[start + 7] + 1
+    elif x <= kl / 16 * 9:
+        pins_new[start + 8] = pins_new[start + 8] + 1
+    elif x <= kl / 16 * 10:
+        pins_new[start + 9] = pins_new[start + 9] + 1
+    elif x <= kl / 16 * 11:
+        pins_new[start + 10] = pins_new[start + 10] + 1
+    elif x <= kl / 16 * 12:
+        pins_new[start + 11] = pins_new[start + 11] + 1
+    elif x <= kl / 16 * 13:
+        pins_new[start + 12] = pins_new[start + 12] + 1
+    elif x <= kl / 16 * 14:
+        pins_new[start + 13] = pins_new[start + 13] + 1
+    elif x <= kl / 16 * 15:
+        pins_new[start + 14] = pins_new[start + 14] + 1
+    else:
+        pins_new[start + 15] = pins_new[start + 15] + 1
+    return pins_new
+
+
+while end < 1:
+    # messwerte werden importiert
+    m1 = float(input("Messwert 1 eingeben: "))
+    m2 = float(input("Messwert 2 eingeben: "))
+    m3 = float(input("Messwert 3 eingeben: "))
+    m4 = float(input("Messwert 4 eingeben: "))
+    kl = float(input("Kantenlänge eingeben(cm): "))
+
+    gm = m1 + m2 + m3 + m4  # berechnung der gesamt kraft
+    x = kl * (m2 + m4) / gm  # berechnung der x-achsen
+    y = kl * (m3 + m4) / gm  # berechnung der y-achse
+
+    m1p = m1 * 100 / gm
+    m2p = m2 * 100 / gm
+    m3p = m3 * 100 / gm
+    m4p = m4 * 100 / gm
+
+    print("kraft an sensor 1 = " + str(m1) + "  (" + str(m1p) + "%)")
+    print("kraft an sensor 2 = " + str(m2) + "  (" + str(m2p) + "%)")
+    print("kraft an sensor 3 = " + str(m3) + "  (" + str(m3p) + "%)")
+    print("kraft an sensor 4 = " + str(m4) + "  (" + str(m4p) + "%)")
+    print("gesamte kraft: " + str(gm))
+    print("x = " + str(x))  # darstellung der x-achse
+    print("y = " + str(y))  # darstellung der y-achse
+    print()
+    print(" ")
+    # berechnung der richtigen reihe
+    if y <= kl / 16 * 1:  # berechnung der richtigen spalte
+        pins = calc(x, kl, pins, 0)
+    elif y <= kl / 16 * 2:
+        pins = calc(x, kl, pins, 16)
+    elif y <= kl / 16 * 3:
+        pins = calc(x, kl, pins, 32)
+    elif y <= kl / 16 * 4:
+        pins = calc(x, kl, pins, 48)
+    elif y <= kl / 16 * 5:
+        pins = calc(x, kl, pins, 64)
+    elif y <= kl / 16 * 6:
+        pins = calc(x, kl, pins, 80)
+    elif y <= kl / 16 * 7:
+        pins = calc(x, kl, pins, 96)
+    elif y <= kl / 16 * 8:
+        pins = calc(x, kl, pins, 112)
+    elif y <= kl / 16 * 9:
+        pins = calc(x, kl, pins, 128)
+    elif y <= kl / 16 * 10:
+        pins = calc(x, kl, pins, 144)
+    elif y <= kl / 16 * 11:
+        pins = calc(x, kl, pins, 160)
+    elif y <= kl / 16 * 12:
+        pins = calc(x, kl, pins, 176)
+    elif y <= kl / 16 * 13:
+        pins = calc(x, kl, pins, 192)
+    elif y <= kl / 16 * 14:
+        pins = calc(x, kl, pins, 208)
+    elif y <= kl / 16 * 15:
+        pins = calc(x, kl, pins, 224)
+    else:
+        pins = calc(x, kl, pins, 240)
+
+    # darstellung der werte in einer tabelle
+    print("       S  S  S  S  S  S  S  S    S  S  S  S  S  S  S  S  ")
+    print("       0  0  0  0  0  0  0  0    0  1  1  1  1  1  1  1  ")
+    print("       1  2  3  4  5  6  7  8    9  1  2  3  4  5  6  7 ")
+    print("       -  -  -  -  -  -  -  -    -  -  -  -  -  -  -  - ")
+    print("R01 =  " + str(pins[0]) + "  " + str(pins[1]) + "  " + str(pins[2]) + "  " + str(pins[3]) + "  " + str(
+        pins[4]) + "  " + str(pins[5]) + "  " + str(pins[6]) + "  " + str(pins[7]) + "    " + str(pins[8]) + "  " + str(
+        pins[9]) + "  " + str(pins[10]) + "  " + str(pins[11]) + "  " + str(
+        pins[12]) + "  " + str(pins[13]) + "  " + str(pins[14]) + "  " + str(pins[15]) + "  ")
+    print("R02 =  " + str(pins[16]) + "  " + str(pins[17]) + "  " + str(pins[18]) + "  " + str(pins[19]) + "  " + str(
+        pins[20]) + "  " + str(pins[21]) + "  " + str(pins[22]) + "  " + str(pins[23]) + "    " + str(pins[24]) + "  " + str(
+        pins[25]) + "  " + str(pins[26]) + "  " + str(pins[27]) + "  " + str(
+        pins[28]) + "  " + str(pins[29]) + "  " + str(pins[30]) + "  " + str(pins[31]) + "  ")
+    print("R03 =  " + str(pins[32]) + "  " + str(pins[33]) + "  " + str(pins[34]) + "  " + str(pins[35]) + "  " + str(
+        pins[36]) + "  " + str(pins[37]) + "  " + str(pins[38]) + "  " + str(pins[39]) + "    " + str(pins[40]) + "  " + str(
+        pins[41]) + "  " + str(pins[42]) + "  " + str(pins[43]) + "  " + str(
+        pins[44]) + "  " + str(pins[45]) + "  " + str(pins[46]) + "  " + str(pins[47]) + "  ")
+    print("R04 =  " + str(pins[48]) + "  " + str(pins[49]) + "  " + str(pins[50]) + "  " + str(pins[51]) + "  " + str(
+        pins[52]) + "  " + str(pins[53]) + "  " + str(pins[54]) + "  " + str(pins[55]) + "    " + str(pins[56]) + "  " + str(
+        pins[57]) + "  " + str(pins[58]) + "  " + str(pins[59]) + "  " + str(
+        pins[60]) + "  " + str(pins[61]) + "  " + str(pins[62]) + "  " + str(pins[63]) + "  ")
+    print("R05 =  " + str(pins[64]) + "  " + str(pins[65]) + "  " + str(pins[66]) + "  " + str(pins[67]) + "  " + str(
+        pins[68]) + "  " + str(pins[69]) + "  " + str(pins[70]) + "  " + str(pins[71]) + "    " + str(pins[72]) + "  " + str(
+        pins[73]) + "  " + str(pins[74]) + "  " + str(pins[75]) + "  " + str(
+        pins[76]) + "  " + str(pins[77]) + "  " + str(pins[78]) + "  " + str(pins[79]) + " ")
+    print("R06 =  " + str(pins[80]) + "  " + str(pins[81]) + "  " + str(pins[82]) + "  " + str(pins[83]) + "  " + str(
+        pins[84]) + "  " + str(pins[85]) + "  " + str(pins[86]) + "  " + str(pins[87]) + "    " + str(pins[88]) + "  " + str(
+        pins[89]) + "  " + str(pins[90]) + "  " + str(pins[91]) + "  " + str(
+        pins[92]) + "  " + str(pins[93]) + "  " + str(pins[94]) + "  " + str(pins[95]) + " ")
+    print("R07 =  " + str(pins[96]) + "  " + str(pins[97]) + "  " + str(pins[98]) + "  " + str(pins[99]) + "  " + str(
+        pins[100]) + "  " + str(pins[101]) + "  " + str(pins[102]) + "  " + str(pins[103]) + "    " + str(
+        pins[104]) + "  " + str(pins[105]) + "  " + str(pins[106]) + "  " + str(pins[107]) + "  " + str(
+        pins[108]) + "  " + str(pins[109]) + "  " + str(pins[110]) + "  " + str(pins[111]) + " ")
+    print("R08 =  " + str(pins[112]) + "  " + str(pins[113]) + "  " + str(pins[114]) + "  " + str(pins[115]) + "  " + str(
+        pins[116]) + "  " + str(pins[117]) + "  " + str(pins[118]) + "  " + str(pins[119]) + "    " + str(
+        pins[120]) + "  " + str(pins[121]) + "  " + str(pins[122]) + "  " + str(pins[123]) + "  " + str(
+        pins[124]) + "  " + str(pins[125]) + "  " + str(pins[126]) + "  " + str(pins[127]) + " ")
+    print(" ")
+    print("R09 =  " + str(pins[128]) + "  " + str(pins[129]) + "  " + str(pins[130]) + "  " + str(pins[131]) + "  " + str(
+        pins[132]) + "  " + str(pins[133]) + "  " + str(pins[134]) + "  " + str(pins[135]) + "    " + str(
+        pins[136]) + "  " + str(
+        pins[137]) + "  " + str(pins[138]) + "  " + str(pins[139]) + "  " + str(
+        pins[140]) + "  " + str(pins[141]) + "  " + str(pins[142]) + "  " + str(pins[143]) + "  ")
+    print("R10 =  " + str(pins[144]) + "  " + str(pins[145]) + "  " + str(pins[146]) + "  " + str(pins[147]) + "  " + str(
+        pins[148]) + "  " + str(pins[149]) + "  " + str(pins[150]) + "  " + str(pins[151]) + "    " + str(
+        pins[152]) + "  " + str(pins[153]) + "  " + str(pins[154]) + "  " + str(pins[155]) + "  " + str(
+        pins[156]) + "  " + str(pins[157]) + "  " + str(pins[158]) + "  " + str(pins[159]) + " ")
+    print("R11 =  " + str(pins[160]) + "  " + str(pins[161]) + "  " + str(pins[162]) + "  " + str(pins[163]) + "  " + str(
+        pins[164]) + "  " + str(pins[165]) + "  " + str(pins[166]) + "  " + str(pins[167]) + "    " + str(
+        pins[168]) + "  " + str(pins[169]) + "  " + str(pins[170]) + "  " + str(pins[171]) + "  " + str(
+        pins[172]) + "  " + str(pins[173]) + "  " + str(pins[174]) + "  " + str(pins[175]) + "  ")
+    print("R12 =  " + str(pins[176]) + "  " + str(pins[177]) + "  " + str(pins[178]) + "  " + str(pins[179]) + "  " + str(
+        pins[180]) + "  " + str(pins[181]) + "  " + str(pins[182]) + "  " + str(pins[183]) + "    " + str(
+        pins[184]) + "  " + str(pins[185]) + "  " + str(pins[186]) + "  " + str(pins[187]) + "  " + str(
+        pins[188]) + "  " + str(pins[189]) + "  " + str(pins[190]) + "  " + str(pins[191]) + " ")
+    print("R13 =  " + str(pins[192]) + "  " + str(pins[193]) + "  " + str(pins[194]) + "  " + str(pins[195]) + "  " + str(
+        pins[196]) + "  " + str(pins[197]) + "  " + str(pins[198]) + "  " + str(pins[199]) + "    " + str(
+        pins[200]) + "  " + str(pins[201]) + "  " + str(pins[202]) + "  " + str(pins[203]) + "  " + str(
+        pins[204]) + "  " + str(pins[205]) + "  " + str(pins[206]) + "  " + str(pins[207]) + " ")
+    print("R14 =  " + str(pins[208]) + "  " + str(pins[209]) + "  " + str(pins[210]) + "  " + str(pins[211]) + "  " + str(
+        pins[212]) + "  " + str(pins[213]) + "  " + str(pins[214]) + "  " + str(pins[215]) + "    " + str(
+        pins[216]) + "  " + str(pins[217]) + "  " + str(pins[218]) + "  " + str(pins[219]) + "  " + str(
+        pins[220]) + "  " + str(pins[221]) + "  " + str(pins[222]) + "  " + str(pins[223]) + " ")
+    print("R15 =  " + str(pins[224]) + "  " + str(pins[225]) + "  " + str(pins[226]) + "  " + str(pins[227]) + "  " + str(
+        pins[228]) + "  " + str(pins[229]) + "  " + str(pins[230]) + "  " + str(pins[231]) + "    " + str(
+        pins[232]) + "  " + str(pins[233]) + "  " + str(pins[234]) + "  " + str(pins[235]) + "  " + str(
+        pins[236]) + "  " + str(pins[237]) + "  " + str(pins[238]) + "  " + str(pins[239]) + " ")
+    print("R16 =  " + str(pins[240]) + "  " + str(pins[241]) + "  " + str(pins[242]) + "  " + str(pins[243]) + "  " + str(
+        pins[244]) + "  " + str(pins[245]) + "  " + str(pins[246]) + "  " + str(pins[247]) + "    " + str(
+        pins[248]) + "  " + str(pins[249]) + "  " + str(pins[250]) + "  " + str(pins[251]) + "  " + str(
+        pins[252]) + "  " + str(pins[253]) + "  " + str(pins[254]) + "  " + str(pins[255]) + "  ")
+    
