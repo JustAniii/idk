@@ -8,6 +8,27 @@ pins = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 end = 0
 end1 = 0
 
+def calc(x: float, kl: float, pins: list, start: int):
+    pins_new = None
+    pins_new = pins
+    if x <= kl / 8 * 1:
+        pins_new[start] = pins_new[start] + 1
+    elif x <= kl / 8 * 2:
+        pins_new[start + 1] = pins_new[start + 1] + 1
+    elif x <= kl / 8 * 3:
+        pins_new[start + 2] = pins_new[start + 2] + 1
+    elif x <= kl / 8 * 4:
+        pins_new[start + 3] = pins_new[start + 3] + 1
+    elif x <= kl / 8 * 5:
+        pins_new[start + 4] = pins_new[start + 4] + 1
+    elif x <= kl / 8 * 6:
+        pins_new[start + 5] = pins_new[start + 5] + 1
+    elif x <= kl / 8 * 7:
+        pins_new[start + 6] = pins_new[start + 6] + 1
+    else:
+        pins_new[start + 7] = pins_new[start + 7] + 1
+    return pins_new
+
 while end < 1:
     # messwerte werden importiert
     m1 = float(input("Messwert 1 eingeben: "))
@@ -28,155 +49,28 @@ while end < 1:
     print("kraft an sensor 1 = " + str(m1) + "  (" + str(m1p) + "%)")
     print("kraft an sensor 2 = " + str(m2) + "  (" + str(m2p) + "%)")
     print("kraft an sensor 3 = " + str(m3) + "  (" + str(m3p) + "%)")
-    print("kraft an sensor 4 = " + str(m4) + "  (" + str(m4p) + "%)")
+    print("kraft an sensor 4 = " + str(m4) + "  (" + str(m4p) + "%)")    
     print("gesamte kraft: " + str(gm))
     print("x = " + str(x)) #darstellung der x-achse
     print("y = " + str(y)) #darstellung der y-achse
     print(" ")
 #berechnung der richtigen reihe
     if y <= kl / 8 * 1: #berechnung der richtigen spalte
-        if x <= kl / 8 * 1:
-            pins[0] = pins[0] + 1
-        elif x <= kl / 8 * 2:
-            pins[1] = pins[1] + 1
-        elif x <= kl / 8 * 3:
-            pins[2] = pins[2] + 1
-        elif x <= kl / 8 * 4:
-            pins[3] = pins[3] + 1
-        elif x <= kl / 8 * 5:
-            pins[4] = pins[4] + 1
-        elif x <= kl / 8 * 6:
-            pins[5] = pins[5] + 1
-        elif x <= kl / 8 * 7:
-            pins[6] = pins[6] + 1
-        else:
-            pins[7] = pins[7] + 1
-
+        pins = calc(x, kl, pins, 0)
     elif y <= kl / 8 * 2:
-        if x <= kl / 8 * 1:
-            pins[8] = pins[8] + 1
-        elif x <= kl / 8 * 2:
-            pins[9] = pins[9] + 1
-        elif x <= kl / 8 * 3:
-            pins[10] = pins[10] + 1
-        elif x <= kl / 8 * 4:
-            pins[11] = pins[11] + 1
-        elif x <= kl / 8 * 5:
-            pins[12] = pins[12] + 1
-        elif x <= kl / 8 * 6:
-            pins[13] = pins[13] + 1
-        elif x <= kl / 8 * 7:
-            pins[14] = pins[14] + 1
-        else:
-            pins[15] = pins[15] + 1
-
+        pins = calc(x, kl, pins, 8)
     elif y <= kl / 8 * 3:
-        if x <= kl / 8 * 1:
-            pins[16] = pins[16] + 1
-        elif x <= kl / 8 * 2:
-            pins[17] = pins[17] + 1
-        elif x <= kl / 8 * 3:
-            pins[18] = pins[18] + 1
-        elif x <= kl / 8 * 4:
-            pins[19] = pins[19] + 1
-        elif x <= kl / 8 * 5:
-            pins[20] = pins[20] + 1
-        elif x <= kl / 8 * 6:
-            pins[21] = pins[21] + 1
-        elif x <= kl / 8 * 7:
-            pins[22] = pins[22] + 1
-        else:
-            pins[23] = pins[23] + 1
-
+        pins = calc(x, kl, pins, 16)
     elif y <= kl / 8 * 4:
-        if x <= kl / 8 * 1:
-            pins[24] = pins[24] + 1
-        elif x <= kl / 8 * 2:
-            pins[25] = pins[25] + 1
-        elif x <= kl / 8 * 3:
-            pins[26] = pins[26] + 1
-        elif x <= kl / 8 * 4:
-            pins[27] = pins[27] + 1
-        elif x <= kl / 8 * 5:
-            pins[28] = pins[28] + 1
-        elif x <= kl / 8 * 6:
-            pins[29] = pins[29] + 1
-        elif x <= kl / 8 * 7:
-            pins[30] = pins[30] + 1
-        else:
-            pins[31] = pins[31] + 1
-
+        pins = calc(x, kl, pins, 24)
     elif y <= kl / 8 * 5:
-        if x <= kl / 8 * 1:
-            pins[32] = pins[32] + 1
-        elif x <= kl / 8 * 2:
-            pins[33] = pins[33] + 1
-        elif x <= kl / 8 * 3:
-            pins[34] = pins[34] + 1
-        elif x <= kl / 8 * 4:
-            pins[35] = pins[35] + 1
-        elif x <= kl / 8 * 5:
-            pins[36] = pins[36] + 1
-        elif x <= kl / 8 * 6:
-            pins[37] = pins[37] + 1
-        elif x <= kl / 8 * 7:
-            pins[38] = pins[38] + 1
-        else:
-            pins[39] = pins[39] + 1
-
+        pins = calc(x, kl, pins, 32)
     elif y <= kl / 8 * 6:
-        if x <= kl / 8 * 1:
-            pins[40] = pins[40] + 1
-        elif x <= kl / 8 * 2:
-            pins[41] = pins[41] + 1
-        elif x <= kl / 8 * 3:
-            pins[42] = pins[42] + 1
-        elif x <= kl / 8 * 4:
-            pins[43] = pins[43] + 1
-        elif x <= kl / 8 * 5:
-            pins[44] = pins[44] + 1
-        elif x <= kl / 8 * 6:
-            pins[45] = pins[45] + 1
-        elif x <= kl / 8 * 7:
-            pins[46] = pins[46] + 1
-        else:
-            pins[47] = pins[47] + 1
-
+        pins = calc(x, kl, pins, 40)
     elif y <= kl / 8 * 7:
-        if x <= kl / 8 * 1:
-            pins[48] = pins[48] + 1
-        elif x <= kl / 8 * 2:
-            pins[49] = pins[49] + 1
-        elif x <= kl / 8 * 3:
-            pins[50] = pins[50] + 1
-        elif x <= kl / 8 * 4:
-            pins[51] = pins[51] + 1
-        elif x <= kl / 8 * 5:
-            pins[52] = pins[52] + 1
-        elif x <= kl / 8 * 6:
-            pins[53] = pins[53] + 1
-        elif x <= kl / 8 * 7:
-            pins[54] = pins[54] + 1
-        else:
-            pins[55] = pins[55] + 1
-
+        pins = calc(x, kl, pins, 48)
     else:
-        if x <= kl / 8 * 1:
-            pins[56] = pins[56] + 1
-        elif x <= kl / 8 * 2:
-            pins[57] = pins[57] + 1
-        elif x <= kl / 8 * 3:
-            pins[58] = pins[58] + 1
-        elif x <= kl / 8 * 4:
-            pins[59] = pins[59] + 1
-        elif x <= kl / 8 * 5:
-            pins[60] = pins[60] + 1
-        elif x <= kl / 8 * 6:
-            pins[61] = pins[61] + 1
-        elif x <= kl / 8 * 7:
-            pins[62] = pins[62] + 1
-        else:
-            pins[63] = pins[63] + 1
+        pins = calc(x, kl, pins, 56)
 
     #darstellung der werte in einer tabelle
     print("     1 2 3 4   5 6 7 8 ")
